@@ -1,0 +1,39 @@
+$nav-height: 60px;
+
+header.top {
+	z-index: 50;
+	position: fixed;
+	width: 100%;
+	height: $nav-height;
+	background: #444;
+	color: #FFF;
+	overflow: hidden;
+
+	.header_wrapper {
+		position: relative;
+		margin: 0 auto;
+		width: 1400px;
+		height: 100%;
+		background: #333;
+	}
+
+	.top_left_logo {
+		position: absolute;
+		left: 0;
+		line-height: $nav-height/2;
+	}
+
+	nav {
+		text-align: right;
+		line-height: $nav-height
+	}
+	li {
+		display: inline-block;
+		padding: 0 2rem;
+		margin: 0 0.5rem;
+	}
+
+
+}
+
+
