@@ -12,6 +12,19 @@ $(document).ready(function() {
     }, 200);
   });
 
+  // Mobile - Nav button
+  $(".mobile_nav_button").click(function(event) {
+    event.stopPropagation();
+    $(".mobile_nav_menu").slideDown(500);
+    $(this).removeClass("passive_mobile_nav").addClass("active_mobile_nav");
+  });
+
+  $('html').click(function() {
+    if ( $(".mobile_nav_menu").is(":visible") ) {
+      $(".mobile_nav_menu").slideUp(500);
+      $(".mobile_nav_button").removeClass("active_mobile_nav").addClass("passive_mobile_nav");
+    }
+  });
 
   // Event Binders
   // bindRotateToLogo();
