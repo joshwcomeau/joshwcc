@@ -1,4 +1,6 @@
-$(document).ready(function() {
+
+
+function nav_functions() {
   // Get nav height
   var nav_height = $("nav").height();
 
@@ -35,7 +37,7 @@ $(document).ready(function() {
 
   // Event Binders
   // bindRotateToLogo();
-});
+}
 
 
 
