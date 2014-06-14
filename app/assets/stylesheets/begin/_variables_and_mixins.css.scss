@@ -1,0 +1,46 @@
+$nav-height: 60px;
+$max-page-width: 1920px;
+
+
+@mixin rotate($deg) {
+      -ms-transform: rotate($deg); 
+     -moz-transform: rotate($deg);
+  -webkit-transform: rotate($deg); 
+          transform: rotate($deg);
+}
+
+
+
+/* Media Queries */
+
+
+ 
+@mixin bp($point) {
+
+  $bp-phone:    "(min-width: 320px)";    /* Smartphone (iPhone) */
+  $bp-phablet:  "(min-width: 481px)";    /* Smartphone (Android) */
+  $bp-tablet:   "(min-width: 768px)";    /* Tablet */
+  $bp-laptop:   "(min-width: 1024px)";   /* Laptop */
+  $bp-desktop:  "(min-width: 1440px)";   /* Desktop */
+  $bp-tv:       "(min-width: 1921px)";   /* Massive desktop */
+
+  @if $point == phone {
+    @media #{$bp-phone} { @content; }
+  }
+  @else if $point == phablet {
+    @media #{$bp-phablet} { @content; }
+  }
+  @else if $point == tablet {
+    @media #{$bp-tablet}  { @content; }
+  }
+  @else if $point == laptop {
+    @media #{$bp-laptop}  { @content; }
+  }
+  @else if $point == desktop {
+    @media #{$bp-desktop}  { @content; }
+  }
+  @else if $point == tv {
+    @media #{$bp-tv}  { @content; }
+  }
+
+}

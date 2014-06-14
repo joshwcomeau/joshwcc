@@ -1,8 +1,10 @@
-$nav-height: 60px;
-$max-page-width: 1920px;
+@import "../begin/variables_and_mixins";
+
 html, body {
 	height: 100%;
 }
+
+/* HEADER STYLES */
 header.top {
 	z-index: 50;
 	position: fixed;
@@ -21,10 +23,43 @@ header.top {
 		background: #333;
 	}
 
+	.decorative_bars {
+		position: absolute;
+		left: -17px;
+		top: 0;
+		height: $nav-height;
+		width: $nav-height;
+		overflow: hidden;
+		@include rotate(45deg);
+
+		& > div {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.dbar_1 {
+			background: #69697B;
+			top: 0;
+		}
+
+		.dbar_2 {
+			background: #6587A1;
+			top: 33%;
+		}
+
+		.dbar_3 {
+			background: #A0A44F;
+			top: 66%;
+		}
+	}
+
 	.top_left_logo {
 		position: absolute;
-		left: 0;
-		line-height: $nav-height/2;
+		left: 3.5rem;
+		line-height: $nav-height;
+		font-weight: 900;
+		font-size: 2.5rem;
 	}
 
 	nav {
@@ -48,9 +83,20 @@ header.top {
 	height: 100%;
 	margin: 0 auto;
 	border-bottom: 1px solid #000;
-	background-image: image-url("josh_splash.jpg");
 	background-size: cover;
 	background-position: right top;
+
+	@include bp(phone) {
+		background-image: image-url("josh_splash/josh_480_portrait.jpg");
+  }
+  @include bp(phablet) {
+		background-image: image-url("josh_splash/josh_800_portrait.jpg");
+  }
+  @include bp(tablet) {
+		background-image: image-url("josh_splash/josh_1890.jpg");
+  }
+
+
 }
 
 
