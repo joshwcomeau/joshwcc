@@ -14,8 +14,10 @@ $(document).ready(function() {
 
   // Mobile - Nav button
   $(".mobile_nav_button").click(function(event) {
-    event.stopPropagation();
+    // remove any previously-selected nav items
+    $(".mobile_nav_menu a").removeClass("mobile_selected_link");
 
+    event.stopPropagation();
     $(".mobile_nav_menu").slideToggle(500);
     $(this).toggleClass("passive_mobile_nav").toggleClass("active_mobile_nav");
   });
@@ -28,7 +30,7 @@ $(document).ready(function() {
 
   // Mobile - click a menu item
   $(".mobile_nav_menu a").click(function() {
-
+    $(this).toggleClass("mobile_selected_link");
   });
 
   // Event Binders
