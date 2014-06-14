@@ -19,7 +19,7 @@ header.top {
 		.header_bar1 {
 			position: absolute;
 			width: 100%;
-			background: #69697B;
+			background: $purple;
 			top: 0;
 			height: 100%;
 		}
@@ -27,7 +27,7 @@ header.top {
 		.header_bar2 {
 			position: absolute;
 			width: 100%;
-			background: #6587A1;
+			background: $blue;
 			top: 10%;
 			height: 90%;
 		}
@@ -35,7 +35,7 @@ header.top {
 		.header_bar3 {
 			position: absolute;
 			width: 100%;
-			background: #A0A44F;
+			background: $green;
 			top: 55%;
 			height: 45%;
 		}		
@@ -73,17 +73,17 @@ header.top {
 		}
 
 		.dbar_1 {
-			background: #69697B;
+			background: $purple;
 			top: 0;
 		}
 
 		.dbar_2 {
-			background: #6587A1;
+			background: $blue;
 			top: 33%;
 		}
 
 		.dbar_3 {
-			background: #A0A44F;
+			background: $green;
 			top: 65%;
 		}
 	}
@@ -129,7 +129,7 @@ header.top {
 				width: 100%;
 				height: $nav-height;
 				bottom: -$nav-height;
-				border-bottom: 3px solid #DE7E32;
+				border-bottom: 3px solid $orange;
 			}
 		}
 
@@ -167,7 +167,7 @@ header.top {
 		}
 
 		.active_mobile_nav {
-			background: #DE7E32;
+			background: $orange;
 			transition: 0.2s;
 		}
 
@@ -189,7 +189,7 @@ header.top {
 			}
 
 			.mobile_selected_link {
-				background: #DE7E32;
+				background: $orange;
 			}
 		}
 		
@@ -227,9 +227,16 @@ body > section {
   }
 }
 
+
 .projects {
 	position: relative;
+	background: $orange;
 
+	.project {
+		background: #FFF;
+		margin-bottom: 20px;
+	}
 }
+
 
 

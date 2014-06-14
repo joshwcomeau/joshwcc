@@ -1,6 +1,16 @@
+// Main Site Colours
+$red:     #F16A5B;
+$purple:  #69697B;
+$blue:    #6587A1;
+$green:   #A0A44F;
+$orange:  #DE7E32;
+
+// Site variables
 $nav-height: 60px;
 $max-page-width: 1920px;
 $header-bg: #333;
+
+
 
 
 @mixin rotate($deg) {
