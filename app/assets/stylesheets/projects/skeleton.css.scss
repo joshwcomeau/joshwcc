@@ -159,6 +159,7 @@ header.top {
 			border-radius: 5px;
 			text-align: center;
 			transition: 0.2s;
+			cursor: pointer;
 		}
 		.passive_mobile_nav {
 			border: 1px solid #444;
@@ -171,6 +172,7 @@ header.top {
 		}
 
 		.mobile_nav_menu {
+			display: none;
 			position: absolute;
 			z-index: 5;
 			width: 100%;
@@ -180,7 +182,7 @@ header.top {
 				display: block;
 				padding: 1rem;
 				border-bottom: 1px solid #555;
-				background: rgba(30,30,30,0.8);
+				background: rgba(30,30,30,0.95);
 
 			}
 		}
@@ -193,7 +195,10 @@ header.top {
 	  } 
 	}
 }
-
+body > section {
+	max-width: $max-page-width;
+	margin: 0 auto;
+}
 .home_splash {
 	position: relative;
 	max-width: $max-page-width;

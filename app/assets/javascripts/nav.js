@@ -15,15 +15,20 @@ $(document).ready(function() {
   // Mobile - Nav button
   $(".mobile_nav_button").click(function(event) {
     event.stopPropagation();
-    $(".mobile_nav_menu").slideDown(500);
-    $(this).removeClass("passive_mobile_nav").addClass("active_mobile_nav");
-  });
 
+    $(".mobile_nav_menu").slideToggle(500);
+    $(this).toggleClass("passive_mobile_nav").toggleClass("active_mobile_nav");
+  });
   $('html').click(function() {
     if ( $(".mobile_nav_menu").is(":visible") ) {
       $(".mobile_nav_menu").slideUp(500);
       $(".mobile_nav_button").removeClass("active_mobile_nav").addClass("passive_mobile_nav");
     }
+  });
+
+  // Mobile - click a menu item
+  $(".mobile_nav_menu a").click(function() {
+
   });
 
   // Event Binders
