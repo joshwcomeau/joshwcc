@@ -1,9 +1,10 @@
 // Simple jQuery Parallax w/ Opacity scrolling plugin. 
 // Written by Joshua Comeau, (c) 2014
-
-function plax(source, speed, horizontalPos, opacityEffect) {
+function plax(source, type, speed, opacityEffect, horizontalPos) {
 	var node = $(source),
 			wind = $(window);
+
+	var originalOffset = node.offset().top;
 
 	wind.scroll(function() {
 		var distTop 	 = wind.scrollTop(),
@@ -11,9 +12,11 @@ function plax(source, speed, horizontalPos, opacityEffect) {
 				nodeHeight = node.height(),
 				nodeTop 	 = node.offset().top;
 
-		node.css({
-			backgroundPosition : horizontalPos + " " + newOffset + "px"
-		});
+		if ( type == "background" ) {
+			plax_bg(node, speed, opacityEffect, newOffset, horizontalPos);
+		} else {
+			plax_elem(node, speed, opacityEffect, newOffset, originalOffset);
+		}
 
 		if ( opacityEffect ) {
 			// OPACITY.
@@ -26,6 +29,22 @@ function plax(source, speed, horizontalPos, opacityEffect) {
 				opacity: newOpacity
 			});
 		}
-		
 	});
 }
+
+
+// For parallaxing background-position
+function plax_bg(source, speed, opacityEffect, newOffset, horizontalPos) {
+	source.css({
+		backgroundPosition : horizontalPos + " " + newOffset + "px"
+	});
+}
+
+// For parallaxing absolutely-positioned elements
+function plax_elem(source, speed, opacityEffect, newOffset, originalOffset) {
+	console.log(newOffset);
+	source.css({
+		top : (originalOffset + newOffset) + "px"
+	});
+}
+
