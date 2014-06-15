@@ -19,7 +19,8 @@ $(document).ready(function() {
   nav_functions();
 
   // Parallax
-  plax(".home_splash", "background", 0.9, true, "right");
+  plax(".home_splash", "background", 0.9, false, "right");
+  plax(".home_splash_inner", "background", 0.9, true, "right");
   plax(".splash_text", "element", 0.8, false);
 
 });

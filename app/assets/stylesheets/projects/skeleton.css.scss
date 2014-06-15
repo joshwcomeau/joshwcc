@@ -228,7 +228,26 @@ header.top {
 .home_splash {
 	max-height: 1080px;
 	height: 100%;
-	border-bottom: 1px solid #000;
+
+	background-size: cover;
+	background-position: right top;
+
+	@include bp(phone) {
+		background-image: image-url("josh_splash/josh_480_portrait_blurred.jpg");
+  }
+  @include bp(phablet) {
+		background-image: image-url("josh_splash/josh_800_portrait_blurred.jpg");
+  }
+  @include bp(tablet) {
+		background-image: image-url("josh_splash/josh_1890_blurred.jpg");
+  }
+
+
+}
+.home_splash_inner {
+	width: 100%;
+	height: 100%;
+
 	background-size: cover;
 	background-position: right top;
 
