@@ -24,9 +24,17 @@ function plax(source, type, speed, opacityEffect, horizontalPos) {
 			// We'll standardize 'max' as 1 by doing current_scroll/object_height
 			var normalizedPosition = (distTop - nodeTop) / nodeHeight;
 			var newOpacity = (-0.75 * normalizedPosition) + 1;
+			var newBlur    = "blur(" + (5 * normalizedPosition - 0.5) + "px)";
+
+			// if ( type != "background" ) { console.log(normalizedPosition); }
 
 			node.css({
-				opacity: newOpacity
+				'opacity'				 : newOpacity,
+				'filter'         : newBlur,
+		    '-webkit-filter' : newBlur,
+		    '-moz-filter'    : newBlur,
+		    '-o-filter'      : newBlur,
+		    '-ms-filter'     : newBlur
 			});
 		}
 	});
@@ -42,7 +50,6 @@ function plax_bg(source, speed, opacityEffect, newOffset, horizontalPos) {
 
 // For parallaxing absolutely-positioned elements
 function plax_elem(source, speed, opacityEffect, newOffset, originalOffset) {
-	console.log(newOffset);
 	source.css({
 		top : (originalOffset + newOffset) + "px"
 	});

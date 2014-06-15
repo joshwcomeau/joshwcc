@@ -20,6 +20,6 @@ $(document).ready(function() {
 
   // Parallax
   plax(".home_splash", "background", 0.9, true, "right");
-  plax(".splash_text", "element", 0.8, true);
+  plax(".splash_text", "element", 0.8, false);
 
 });
