@@ -7,6 +7,7 @@ function plax(source, type, speed, opacityEffect, horizontalPos) {
 	var originalOffset = node.offset().top;
 
 	wind.scroll(function() {
+		console.log("scroll detected!");
 		var distTop 	 = wind.scrollTop(),
 				newOffset  = distTop * speed,
 				nodeHeight = node.height(),

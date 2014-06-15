@@ -9,7 +9,7 @@ html, body {
 /* HEADER STYLES */
 header.top {
 	z-index: 50;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: $nav-height;
 	background: $header-bg;
@@ -267,7 +267,7 @@ header.top {
 }
 .home_splash {
 	max-height: 1080px;
-	height: 100%;
+	height: 90%;
 
 	background-size: cover;
 	background-position: right top;
@@ -289,7 +289,7 @@ header.top {
 	height: 100%;
 
 	background-size: cover;
-	background-position: right top;
+	background-position: center top;
 
 	@include bp(phone) {
 		background-image: image-url("josh_splash/josh_480_portrait.jpg");
@@ -298,24 +298,33 @@ header.top {
 		background-image: image-url("josh_splash/josh_800_portrait.jpg");
   }
   @include bp(tablet) {
+  	background-position: right top;
 		background-image: image-url("josh_splash/josh_1890.jpg");
   }
 }
 .splash_text {
 	position: absolute;
-	top: 24%;
-	left: 2rem;
-}
+	top: 12%;
+	left: 7%;
+	width: 86%;
+	height: 76%;
+	margin: auto;
 
-.big_text {
-	font-size: 3rem;
-	font-weight: 900;
-	color: #333;
-	background: $red;
-	padding: 1rem;
-	border-radius: 4px;
+	.greeting {
+		font-size: 5rem;
+		font-weight: 900;
+		color: #FFF;
+		text-shadow: 1px 1px 4px #000;
+	}
+	.big_text {
+		font-size: 3rem;
+		font-weight: 900;
+		color: #333;
+		background: $red;
+		padding: 1rem;
+		border-radius: 4px;
+	}
 }
-
 
 .projects {
 	position: relative;
