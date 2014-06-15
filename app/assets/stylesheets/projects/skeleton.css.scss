@@ -119,14 +119,12 @@ header.top {
 		text-align: right;
 		line-height: $nav-height;
 		margin-right: 1.5rem;
-		text-shadow: 
-			1px 1px 0px darken($header-bg, 10%),
-			2px 2px 0px darken($header-bg, 10%);
 
 		li {
 			position: relative;
 			display: inline-block;
 			margin: 0 0.1rem;
+			vertical-align: top;
 
 
 			.nav_link {
@@ -136,16 +134,58 @@ header.top {
 				padding: 0 1.2rem;
 				cursor: pointer;
 				font-size: 1.1rem;
+				text-shadow: 
+					1px 1px 0px darken($header-bg, 10%),
+					2px 2px 0px darken($header-bg, 10%);
+
 			}
-			.nav_highlight {
-				z-index: 1;
-				position: absolute;
-				background: #222;
+			.nav_slide {
+				position: relative;
+				display: block;
+				padding: 0 1.2rem;
+				cursor: pointer;
 				width: 100%;
-				height: $nav-height;
-				bottom: -$nav-height;
-				border-bottom: 3px solid $orange;
+				text-align: center;
 			}
+			.nav_slide.n1 {
+				background: $red;
+				text-shadow: 1px 1px 0px darken($red, 20%);
+				font-size: 2rem;
+			}
+			.nav_slide.n2 {
+				background: $orange;
+				text-shadow: 1px 1px 0px darken($orange, 20%);
+				font-size: 2rem;
+			}
+			.nav_slide.n3 {
+				background: $green;
+				text-shadow: 1px 1px 0px darken($green, 20%);
+				font-size: 1.8rem;
+			}
+			.nav_slide.n4 {
+				background: $blue;
+				text-shadow: 1px 1px 0px darken($blue, 20%);
+				font-size: 1.8rem;
+			}
+			.nav_slide.n5 {
+				background: $purple;
+				text-shadow: 1px 1px 0px darken($purple, 20%);
+				font-size: 1.6rem;
+			}
+			.nav_slide.n6 {
+				background: #111;
+				text-shadow: 1px 1px 0px #000;
+				font-size: 1.6rem;
+			}
+			// .nav_highlight {
+			// 	z-index: 1;
+			// 	position: absolute;
+			// 	background: #222;
+			// 	width: 100%;
+			// 	height: $nav-height;
+			// 	bottom: -$nav-height * 2;
+			// 	border-bottom: 3px solid $orange;
+			// }
 		}
 
 		@include bp(phone) {
@@ -263,7 +303,7 @@ header.top {
 }
 .splash_text {
 	position: absolute;
-	top: $nav-height + 80px;
+	top: 24%;
 	left: 2rem;
 }
 

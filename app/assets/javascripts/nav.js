@@ -2,17 +2,14 @@
 
 function nav_functions() {
   // Get nav height
-  var nav_height = $("nav").height();
+  var nav_height = $(".desktop_nav").height();
 
-  $(".nav_link").mouseenter(function() {
-    $(this).parent().children(".nav_highlight").animate({
-      bottom: 0
-    }, 300);
-  }).mouseout(function() {
-    $(this).parent().children(".nav_highlight").animate({
-      bottom: -nav_height
-    }, 200);
+  $(".desktop_nav li").hover(function(){
+      $(this).children().filter(':not(:animated)').animate({ top: -nav_height/2 }, 350);
+  }, function() {
+      $(this).children().animate({ top: 0 }, 250);
   });
+
 
   // Mobile - Nav button
   $(".mobile_nav_button").click(function(event) {
