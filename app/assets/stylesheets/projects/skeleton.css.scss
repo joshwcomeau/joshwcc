@@ -32,7 +32,7 @@ header.top {
 			background: $blue;
 			top: 18%;
 			height: 82%;
-			border: 1px solid rgba(0,0,0,0.25);
+			// border: 1px solid rgba(0,0,0,0.25);
 		}
 
 		.header_bar3 {
@@ -41,7 +41,7 @@ header.top {
 			background: $green;
 			top: 61%;
 			height: 39%;
-			border: 1px solid rgba(0,0,0,0.25);
+			// border: 1px solid rgba(0,0,0,0.25);
 		}		
 	}
 
@@ -85,13 +85,13 @@ header.top {
 		.dbar_2 {
 			background: $blue;
 			top: 33%;
-			border: 1px solid rgba(0,0,0,0.25);
+			// border: 1px solid rgba(0,0,0,0.25);
 		}
 
 		.dbar_3 {
 			background: $green;
 			top: 65%;
-			border: 1px solid rgba(0,0,0,0.25);
+			// border: 1px solid rgba(0,0,0,0.25);
 		}
 	}
 
@@ -216,6 +216,10 @@ header.top {
 	  } 
 	}
 }
+
+
+////////////* HOMEPAGE *////////////////
+
 .home_splash, .projects {
 	position: relative;
 	max-width: $max-page-width;
@@ -243,6 +247,7 @@ header.top {
 .projects {
 	position: relative;
 	background: $orange;
+	min-height: 100%;
 
 	.project {
 		background: #FFF;

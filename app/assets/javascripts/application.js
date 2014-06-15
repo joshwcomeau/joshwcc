@@ -15,5 +15,9 @@
 //= require_tree .
 
 $(document).ready(function() {
+  // Navigation functions (desktop and mobile hover/click events)
   nav_functions();
+
+  // Parallax
+  plax(".home_splash", 0.9, "right", true);
 });
