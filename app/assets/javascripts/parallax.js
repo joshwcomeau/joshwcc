@@ -23,7 +23,7 @@ function plax(source, type, speed, opacityEffect, horizontalPos) {
 			// We want the opacity to go from 1 to 0.25, as the scroll distance goes from 0 to max. 
 			// We'll standardize 'max' as 1 by doing current_scroll/object_height
 			var normalizedPosition = (distTop - nodeTop) / nodeHeight;
-			var newOpacity = (-1.5 * normalizedPosition) + 1;
+			var newOpacity = (-1.65 * normalizedPosition) + 1;
 
 			// if ( type != "background" ) { console.log(normalizedPosition); }
 

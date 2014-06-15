@@ -260,21 +260,20 @@ header.top {
   @include bp(tablet) {
 		background-image: image-url("josh_splash/josh_1890.jpg");
   }
+}
+.splash_text {
+	position: absolute;
+	top: $nav-height + 80px;
+	left: 2rem;
+}
 
-  .splash_text {
-  	position: absolute;
-  	top: $nav-height + 80px;
-  	left: 2rem;
-  }
-
-  .big_text {
-  	font-size: 3rem;
-  	font-weight: 900;
-  	color: #333;
-		background: $red;
-		padding: 1rem;
-		border-radius: 4px;
-  }
+.big_text {
+	font-size: 3rem;
+	font-weight: 900;
+	color: #333;
+	background: $red;
+	padding: 1rem;
+	border-radius: 4px;
 }
 
 
