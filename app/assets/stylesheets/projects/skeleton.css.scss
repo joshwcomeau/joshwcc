@@ -3,6 +3,7 @@
 
 html, body {
 	height: 100%;
+	background: #333;
 }
 
 /* HEADER STYLES */
@@ -13,6 +14,7 @@ header.top {
 	height: $nav-height;
 	background: $header-bg;
 	color: #FFF;
+	box-shadow: 0px 2px 20px rgba(0,0,0,0.5);
 
 	.header_bars {
 
@@ -28,16 +30,18 @@ header.top {
 			position: absolute;
 			width: 100%;
 			background: $blue;
-			top: 10%;
-			height: 90%;
+			top: 18%;
+			height: 82%;
+			border: 1px solid rgba(0,0,0,0.25);
 		}
 
 		.header_bar3 {
 			position: absolute;
 			width: 100%;
 			background: $green;
-			top: 55%;
-			height: 45%;
+			top: 61%;
+			height: 39%;
+			border: 1px solid rgba(0,0,0,0.25);
 		}		
 	}
 
@@ -59,12 +63,13 @@ header.top {
 	}
 	.decorative_bars {
 		position: absolute;
-		left: -$nav-height/3;
-		top: 0;
+		left: -$nav-height*0.7;
+		top: $nav-height*0.2;
 		height: $nav-height;
-		width: $nav-height;
+		width: $nav-height*2;
 		overflow: hidden;
 		@include rotate(45deg);
+
 
 		& > div {
 			position: absolute;
@@ -80,20 +85,27 @@ header.top {
 		.dbar_2 {
 			background: $blue;
 			top: 33%;
+			border: 1px solid rgba(0,0,0,0.25);
 		}
 
 		.dbar_3 {
 			background: $green;
 			top: 65%;
+			border: 1px solid rgba(0,0,0,0.25);
 		}
 	}
 
 	.top_left_logo {
 		position: absolute;
-		left: 4rem;
+		left: 1.5rem;
 		line-height: $nav-height;
 		font-weight: 900;
 		font-size: 2.5rem;
+		text-shadow: 
+			1px 1px 0px darken($header-bg, 10%),
+			2px 2px 0px darken($header-bg, 10%),
+			3px 3px 0px darken($header-bg, 10%);
+
 
 		@include bp(phone) {
 			font-size: 1.5rem;
@@ -106,7 +118,10 @@ header.top {
 	nav.desktop_nav {
 		text-align: right;
 		line-height: $nav-height;
-	
+		margin-right: 1.5rem;
+		text-shadow: 
+			1px 1px 0px darken($header-bg, 10%),
+			2px 2px 0px darken($header-bg, 10%);
 
 		li {
 			position: relative;
@@ -201,17 +216,14 @@ header.top {
 	  } 
 	}
 }
-body > section {
+.home_splash, .projects {
+	position: relative;
 	max-width: $max-page-width;
 	margin: 0 auto;
 }
 .home_splash {
-	position: relative;
-	max-width: $max-page-width;
-	width: 100%;
 	max-height: 1080px;
 	height: 100%;
-	margin: 0 auto;
 	border-bottom: 1px solid #000;
 	background-size: cover;
 	background-position: right top;
