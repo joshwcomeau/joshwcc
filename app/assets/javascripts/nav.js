@@ -32,9 +32,22 @@ function nav_functions() {
     $(this).toggleClass("mobile_selected_link");
   });
 
+  $(window).bind('mousewheel DOMMouseScroll', function(e) {
+    
+
+    if (e.type == 'mousewheel') {
+      console.log("mousewheel");
+      $(window).scrollTop("500");
+    }
+    else if (e.type == 'DOMMouseScroll') {
+      
+    }
+  });
+
   // Event Binders
   // bindRotateToLogo();
 }
+
 
 
 
