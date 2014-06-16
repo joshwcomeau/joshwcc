@@ -1,51 +1,39 @@
 // Simple jQuery Parallax w/ Opacity scrolling plugin. 
 // Written by Joshua Comeau, (c) 2014
-function plax(source, type, speed, opacityEffect, horizontalPos) {
-	var node = $(source),
-			wind = $(window);
+function plax(view) {
+	var node = $(view),
+			wind = $(window),
+      speed = 1500,
+      nodeHeight = node.height();
 
-	var originalOffset = node.offset().top;
+  if ( view === "#view_1") {
+    var newBgPosition = (nodeHeight/2 * -1) + "px" ,
+        newTextPosition = (nodeHeight/10 * -1) + "px";
 
-	wind.scroll(function() {
-		var distTop 	 = wind.scrollTop(),
-				newOffset  = distTop * speed,
-				nodeHeight = node.height(),
-				nodeTop 	 = node.offset().top;
+    // Do the background position and opacity of home_splash_inner
+    $(".home_splash_inner").animate({
+      opacity: 0,
+      backgroundPositionY: newBgPosition
+    }, speed);
+    $(".home_splash").animate({
+      backgroundPositionY: newBgPosition
+    }, speed);
 
-		if ( type == "background" ) {
-			plax_bg(node, speed, opacityEffect, newOffset, horizontalPos);
-		} else {
-			plax_elem(node, speed, opacityEffect, newOffset, originalOffset);
-		}
+    // Do the splash_text position.
+    $(".splash_text").animate({
+      opacity: 0.5,
+      top: newTextPosition
+    }, speed)
 
-		if ( opacityEffect ) {
-			// OPACITY.
-			// We want the opacity to go from 1 to 0.25, as the scroll distance goes from 0 to max. 
-			// We'll standardize 'max' as 1 by doing current_scroll/object_height
-			var normalizedPosition = (distTop - nodeTop) / nodeHeight;
-			var newOpacity = (-1.65 * normalizedPosition) + 1;
-
-			// if ( type != "background" ) { console.log(normalizedPosition); }
-
-			node.css({
-				'opacity'				 : newOpacity
-			});
-		}
-	});
+    // Move our new view up
+    $("#view_2").animate({
+      top: 0
+    }, speed);
+  }
 }
 
-
-// For parallaxing background-position
-function plax_bg(source, speed, opacityEffect, newOffset, horizontalPos) {
-	source.css({
-		backgroundPosition : horizontalPos + " " + newOffset + "px"
-	});
+function plax_bind() {
+  $(".top_left_logo").on("click", function() {
+    plax("#view_1");
+  })
 }
-
-// For parallaxing absolutely-positioned elements
-function plax_elem(source, speed, opacityEffect, newOffset, originalOffset) {
-	source.css({
-		top : (originalOffset + newOffset) + "px"
-	});
-}
-
