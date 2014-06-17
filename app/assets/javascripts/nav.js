@@ -1,8 +1,26 @@
 
 
 function nav_functions() {
-  // Get nav height
-  var nav_height = $(".desktop_nav").height();
+  // Get nav height and initial offset
+  var nav_header = $(".desktop_nav"),
+      nav_height = nav_header.height(),
+      nav_offset = nav_header.offset().top;
+
+  // Change position to fixed when the scroll-top surpasses it.
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() >= nav_offset ) {
+      $("header.top").css({
+        position: 'fixed',
+        top: 0
+      });
+      $(".header_spacer").show();
+    } else {
+      $("header.top").css({
+        position: 'relative'
+      });
+      $(".header_spacer").hide();
+    }
+  });
 
   $(".desktop_nav li").hover(function(){
       $(this).children().filter(':not(:animated)').animate({ top: -nav_height/2 }, 350);
@@ -30,18 +48,6 @@ function nav_functions() {
   // Mobile - click a menu item
   $(".mobile_nav_menu a").click(function() {
     $(this).toggleClass("mobile_selected_link");
-  });
-
-  $(window).bind('mousewheel DOMMouseScroll', function(e) {
-    
-
-    if (e.type == 'mousewheel') {
-      console.log("mousewheel");
-      $(window).scrollTop("500");
-    }
-    else if (e.type == 'DOMMouseScroll') {
-      
-    }
   });
 
   // Event Binders

@@ -256,6 +256,11 @@ header.top {
 	  } 
 	}
 }
+.header_spacer {
+	display: none;
+	position: relative;
+	height: $nav-height;
+}
 
 
 ////////////* HOMEPAGE *////////////////
@@ -336,7 +341,7 @@ header.top {
 .projects {
 	position: relative;
 	background: $orange;
-	min-height: 100%;
+	min-height: 140%;
 
 	.project {
 		background: #FFF;
