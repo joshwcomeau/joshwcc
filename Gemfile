@@ -19,3 +19,10 @@ gem 'rspec-rails'
 
 # COSMETIC GEMS
 gem 'font-awesome-sass'
+
+# HEROKU GEMS
+gem 'rails_12factor'
+
+
+
+ruby '2.1.0'
